@@ -23,51 +23,31 @@ export const initialState = {
 export const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TASK":
-        // How awesome is Formik?  It makes everything easier
+      // How awesome is Formik?  It makes everything easier
       return {
-          ...state,
-          todoArray: [...state.todoArray, action.payload]
-      }
-      case "TOGGLE_COMPLETED":
-          return {
-              ...state,
-             todoArray: state.todoArray.map(task=>{
-                 if (action.payload === task.id) {
-                     return {
-                         ...task,
-                         completed: !task.completed
-                     }
-                 }
-                 return task;
-             })
-
+        ...state,
+        todoArray: [...state.todoArray, action.payload]
+      };
+    case "TOGGLE_COMPLETED":
+      return {
+        ...state,
+        todoArray: state.todoArray.map(task => {
+          if (action.payload === task.id) {
+            return {
+              ...task,
+              completed: !task.completed
+            };
           }
+          return task;
+        })
+      };
 
-        //   case 'TOGGLE_ITEM':
-        //         return {
-        //           ...state,
-        //           groceries: state.groceries.map(item => {
-        //             if (action.payload === item.id) {
-        //               return {
-        //                 ...item,
-        //                 // name: item.name,
-        //                 // id: item.id,
-        //                 // purchased: item.purchased,
-        //                 purchased: !item.purchased
-        //               };
-        //             }
-        //             return item;
-        //           })
-        //         };
-
-
-
-
-      case "CLEAR_COMPLETED":
-          return {
-              ...state
-          }
-          default:
-              return state;
+    case "CLEAR_COMPLETED":
+      return {
+        ...state,
+        todoArray: state.todoArray.filter(task=> !task.completed)
+      };
+    default:
+      return state;
   }
 };

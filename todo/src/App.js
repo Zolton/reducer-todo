@@ -20,18 +20,16 @@ function App() {
     dispatch({ type: "TOGGLE_COMPLETED", payload: taskId });
   };
 
-  const clearPurchased = e => {
-    e.preventDefault();
-    dispatch({ type: 'CLEAR_PURCHASED' });
-  };
-
-
+  const clearCompleted = () => {
+    dispatch({type: "CLEAR_COMPLETED"})
+  }
 
   return (
     <div className="App">
       <h1>ToDo List redux (not that Redux, open a dictionary)</h1>
       <ToDoList state={state} toggleTask={toggleTask} />
       <FormikForm addTask={addTask} />
+      <button onClick={()=>{clearCompleted()}}>Clear Completed</button>
     </div>
   );
 }
