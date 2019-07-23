@@ -5,7 +5,12 @@ import { withFormik, Form, Field } from "formik";
 function ListForm({ values, errors, touched, isSubmitting }) {
   return (
     <Form>
-      <Field type="task" name="task" placeholder="Enter new task" />
+      <Field type="task" name="task" placeholder="Enter new task" /><div>
+      <label>Due Date</label><Field component="select" name="dueDate">
+        <option value="now">Now</option>
+      <option value="nextMonth"> Next Month</option>
+      <option value="yesterday">Yesterday</option>
+      </Field></div>
       <div>
         <button type="submit">Submit New Task</button>
       </div>
@@ -25,7 +30,8 @@ const FormikForm = withFormik({
     return {
       task: task || "",
       completed: false,
-      id: Date.now()
+      id: Date.now(),
+     // dueDate: Date("2000-7-23T00:18:00")
     };
   },
 
