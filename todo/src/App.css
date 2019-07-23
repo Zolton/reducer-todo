@@ -32,6 +32,43 @@
   }
 }
 
+h4 {
+  background-color: lightsalmon;
+  color: white;
+  width: 30%;
+  margin: 20px auto;
+}
+
 .completed {
   background-color: black;
+}
+
+input {
+  width: 30%;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.complete {
+  border-radius: 25%;
+  height: 50px;
+  width: 125px;
+  background-color: red;
+  color: white;
+}
+
+button {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  background-color: lightseagreen;
+  color: white;
+}
+
+.erase {
+  border-radius: 50%;
+  height: 50px;
+  width: 125px;
+  background-color: black;
+  color: red;
 }

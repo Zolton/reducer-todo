@@ -6,7 +6,9 @@ function ListForm({ values, errors, touched, isSubmitting }) {
   return (
     <Form>
       <Field type="task" name="task" placeholder="Enter new task" />
-      <button type="submit">Submit New Task</button>
+      <div>
+        <button type="submit">Submit New Task</button>
+      </div>
     </Form>
   );
 }
@@ -14,8 +16,7 @@ function ListForm({ values, errors, touched, isSubmitting }) {
 // If you're wondering why I'm using Formik, you don't know
 // how much I truly hated change and submit handlers
 
-
-//  This is absolutely brilliant - Formik will always send back an 
+//  This is absolutely brilliant - Formik will always send back an
 // object by default, so just configure what you want it to look
 // like here instead of in the reducer or changeHandler!!
 
