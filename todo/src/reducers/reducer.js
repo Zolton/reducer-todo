@@ -23,14 +23,10 @@ export const initialState = {
 export const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TASK":
-      const newTask = {
-        task: action.payload,
-        completed: false,
-        id: Date.now()
-      };
+        // How awesome is Formik?  It makes everything easier
       return {
           ...state,
-          todoArray: [...state.todoArray, newTask]
+          todoArray: [...state.todoArray, action.payload]
       }
       case "TOGGLE_COMPLETED":
           return {

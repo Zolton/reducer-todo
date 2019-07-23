@@ -1,8 +1,10 @@
 import React from "react";
-import Task from "./Task"
+import Task from "./Task";
 
-function TodoList (props) {
-  return props.initialState.todoArray.map(task => <Task task={task} />);
+function TodoList(props) {
+  console.log("todolist props")
+  console.log(props)
+  return props.state.todoArray.map(task => <Task task={task} />);
 }
 
 export default TodoList;
