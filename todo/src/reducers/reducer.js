@@ -3,19 +3,19 @@ export const initialState = {
     {
       task: "Study Japanese",
       completed: false,
-      id: Date.now()
+      id: 0
     },
 
     {
       task: "Smoke ribs",
       completed: false,
-      id: Date.now()
+      id: 1
     },
 
     {
       task: "Take out garbage",
       completed: false,
-      id: Date.now()
+      id: 2
     }
   ]
 };
@@ -30,8 +30,38 @@ export const reducer = (state, action) => {
       }
       case "TOGGLE_COMPLETED":
           return {
-              ...state
+              ...state,
+             todoArray: state.todoArray.map(task=>{
+                 if (action.payload === task.id) {
+                     return {
+                         ...task,
+                         completed: !task.completed
+                     }
+                 }
+                 return task;
+             })
+
           }
+
+        //   case 'TOGGLE_ITEM':
+        //         return {
+        //           ...state,
+        //           groceries: state.groceries.map(item => {
+        //             if (action.payload === item.id) {
+        //               return {
+        //                 ...item,
+        //                 // name: item.name,
+        //                 // id: item.id,
+        //                 // purchased: item.purchased,
+        //                 purchased: !item.purchased
+        //               };
+        //             }
+        //             return item;
+        //           })
+        //         };
+
+
+
 
       case "CLEAR_COMPLETED":
           return {

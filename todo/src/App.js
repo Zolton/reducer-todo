@@ -16,8 +16,8 @@ function App() {
 
 
 
-  const toggleItem = itemId => {
-    dispatch({ type: 'TOGGLE_ITEM', payload: itemId });
+  const toggleTask = taskId => {
+    dispatch({ type: "TOGGLE_COMPLETED", payload: taskId });
   };
 
   const clearPurchased = e => {
@@ -29,12 +29,8 @@ function App() {
 
   return (
     <div className="App">
-      {console.log("initial state below")}
-      {console.log(initialState)}
-      {console.log("state below")}
-      {console.log(state)}
-      Hello from App
-      <ToDoList state={state} />
+      <h1>ToDo List redux (not that Redux, open a dictionary)</h1>
+      <ToDoList state={state} toggleTask={toggleTask} />
       <FormikForm addTask={addTask} />
     </div>
   );
