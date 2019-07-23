@@ -1,8 +1,8 @@
 import React, {useReducer} from "react";
 import "./App.css";
-import ToDoList from "./components/ToDoList";
+import ToDoList from "./components/TaskList/ToDoList";
 import { reducer, initialState } from "./reducers/reducer";
-import FormikForm from "./components/ListForm"
+import FormikForm from "./components/Formik/ListForm"
 import ReactDOM from "react-dom"
 
 function App() {

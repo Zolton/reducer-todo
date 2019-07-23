@@ -1,7 +1,6 @@
 import React from "react";
 
 function Task(props) {
-  console.log(props.task);
   return (
     <>
       <h4>Task: {props.task.task}</h4>
